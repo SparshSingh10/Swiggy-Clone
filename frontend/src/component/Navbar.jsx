@@ -39,7 +39,7 @@ function Navbar() {
                 </div>
                 <div className="ml-2 mx-6 text-xl font-bold">Swiggy</div>
                 <NavLink to="/">Home</NavLink>
-                <NavLink className='p-3' to="/add">Add</NavLink>
+                {/* <NavLink className='p-3' to="/add">Add</NavLink> */}
                 <NavLink className='p-3' to="/profile">Profile</NavLink>
             </div>
             <div className="flex items-center px-6 pt-6">
