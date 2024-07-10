@@ -21,7 +21,7 @@ function Profile() {
   const fetchUser = async () => {
       const token = localStorage.getItem('myToken');
       const userData = JSON.parse(token);
-      const response = await axios.get(`http://localhost:8080/profile/${userData._id}`);
+      const response = await axios.get(`${import.meta.env.VITE_HOST_URL}/${userData._id}`);
       setUser(response.data);
     
   };
@@ -33,7 +33,7 @@ function Profile() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-      await axios.patch(`http://localhost:8080/profile/${user._id}`, user); 
+      await axios.patch(`${import.meta.env.VITE_HOST_URL}/${user._id}`, user); 
   };
 
   return (
