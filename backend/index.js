@@ -5,9 +5,11 @@ const cors = require('cors');
 // const seedDB=require('./seed');
 const userRoutes=require('./routes/UserRoutes');
 const swiggyRoutes=require('./routes/SwiggyRoutes');
+const dotenv=require('dotenv');
 
+dotenv.config();
 // seedDB();
-mongoose.connect('mongodb://localhost:27017/swiggy')
+mongoose.connect(process.env.MONGO_URL)
 .then(()=>{
     console.log("DB connected")
 })
