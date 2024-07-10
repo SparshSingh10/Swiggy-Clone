@@ -46,7 +46,7 @@ function Login() {
     const handleSubmit1 = async (e) => {
     e.preventDefault();
     try {
-        const response = await axios.post("http://127.0.0.1:8080/login", {
+        const response = await axios.post(`${import.meta.env.VITE_HOST_URL}/login`, {
             email: loginEmail,
             password: loginPassword
         });
@@ -69,7 +69,7 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://127.0.0.1:8080/register", formData);
+            const response = await axios.post(`${import.meta.env.VITE_HOST_URL}/register`, formData);
             const { user, msg } = response.data;
             navigate('/');
         } catch (error) {
