@@ -11,7 +11,7 @@ function Home() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/home");
+      const response = await axios.get(`${import.meta.env.VITE_HOST_URL}/home`);
       if (response.status === 200) {
         setDishesData(response.data);
       }
@@ -20,7 +20,7 @@ function Home() {
     }
   };
   const handleDelete =async(id)=>{
-    await axios.delete(`http://localhost:8080/home/${id}`);
+    await axios.delete(`${import.meta.env.VITE_HOST_URL}/home/${id}`);
   }
 
   return (
