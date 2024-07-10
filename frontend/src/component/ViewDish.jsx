@@ -9,7 +9,7 @@ function ViewDish() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/home/${id}`);
+        const response = await axios.get(`${import.meta.env.VITE_HOST_URL}/${id}`);
         // console.log(response.data);
         setDishes(response.data);
       } catch (error) {
