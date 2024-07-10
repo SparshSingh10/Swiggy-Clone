@@ -13,7 +13,7 @@ mongoose.connect(process.env.MONGO_URL)
 .then(()=>{
     console.log("DB connected")
 })
-.catch(()=>{
+.catch((err)=>{
     console.log("Db Connection Error",err);
 })
 
