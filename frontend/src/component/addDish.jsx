@@ -24,7 +24,7 @@ function AddDish() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://127.0.0.1:8080/home', formData);
+      const response = await axios.post(`${import.meta.env.VITE_HOST_URL}/home`, formData);
       navigate('/'); 
       setFormData({img: '',dishName: '',time: '',address: '',dishOwner: ''});
     } catch (error) {
